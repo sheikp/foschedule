@@ -138,20 +138,19 @@
             <div class="grid-9" style="height:500px;">
                 <div class="cta-footer-form">
                    
-                    <form name="contact_form" action="http://fios.verizon.com/contact_form_post2.php" method="post">
+                    <form name="contact_form" runat="server" >
 
                         <input type="hidden" name="action" value="Y1Ttj7N4NG%2Ft2SmSTwUUOw%3D%3D">
                         <input type="hidden" name="ref" value="CVuWClJIpEw%2BUAFlcHe0EQ%3D%3D">
                         <input type="hidden" name="PageID" value="page9571">
 
-                        <input type="text" name="Phone1" class="Phone1" value="" placeholder="Phone Number" required="">
-
-                        <input type="text" name="ZipCode" class="ZipCode" value="" placeholder="ZIP Code" required="" pattern="(\d{5}([\-]\d{4})?)" title="enter a valid five-digit ZIP code">
+                        <input type="text" id="txtPhone" runat="server" name="Phone1" class="Phone1" value="" placeholder="Phone Number" required="">
+                        <input type="text" id="txtEmail" runat="server" name="Phone1" class="Phone1" value="" placeholder="Email" required="">
+                        <input type="text" id="txtZip" runat="server" name="ZipCode" class="ZipCode" value="" placeholder="ZIP Code" required="" pattern="(\d{5}([\-]\d{4})?)" title="enter a valid five-digit ZIP code">
                        
-                         <a href="https://www.verizon.com/ForYourHome/GoFlow/NationalBundles/BundleQualify.aspx?j=eyJ0IjoiMS04NzctNjk2LTM0NTUiLCJwIjoiUTgxLTY0MiIsImMiOiIiLCJiIjoiIiwidyI6IjI4ODg4MTY0MiIsInYiOiIxNTI3OTA2NzEiLCJvIjoiUmVkVmVudHVyZXMifQ%3D%3D&v=2e081619ae2b892d74bda77095a1e682" target="_blank" class="grad-primary btn btn-highlight">Sign up</a> 
-
-
-</form>
+                        <asp:LinkButton ID="lnkOrder" runat="server" CssClass="grad-primary btn btn-highlight"  OnClick="lnkOrder_Click" Text="Sign up"></asp:LinkButton>
+                     
+                     </form>
                 </div>
                 <!-- END .cta-footer-form -->
             </div>

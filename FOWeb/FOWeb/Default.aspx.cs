@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using FOWeb;
 
 namespace FOWeb
 {
@@ -11,6 +12,13 @@ namespace FOWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+        }
+
+        protected void lnkOrder_Click(object sender, EventArgs e)
+        {
+            SimpleBL nOrder = new SimpleBL();
+            int res = nOrder.newOrder(txtPhone.Value, txtEmail.Value, txtZip.Value);
 
         }
     }
