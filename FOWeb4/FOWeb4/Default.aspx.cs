@@ -12,6 +12,7 @@ namespace FOWeb4
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            lblmessage.Text = "";
 
         }
 
@@ -19,6 +20,13 @@ namespace FOWeb4
         {
             SimpleBL nOrder = new SimpleBL();
             int res = nOrder.newOrder(txtPhone.Value, txtEmail.Value, txtZip.Value);
+            string[] cuS = nOrder.ScheduleOrder(res, txtZip.Value).Split("##".ToCharArray());
+
+            if (cuS[6] == "1")
+                cuS[6] = "9AM";
+            else
+                cuS[6] = "1PM";
+            lblmessage.Text = "Thank you for Ordering FiOS. Technician " + cuS[0] + "(Mobile: " + cuS[2] + ") will come to your place on " + cuS[4]  + " @ " + cuS[6] + ".";
 
         }
     }

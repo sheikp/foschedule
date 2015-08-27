@@ -16,9 +16,9 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="common/css/ie8.css" /><![endif]-->
 
         <link href="http://fios.verizon.com/css/normalize.css" rel="stylesheet" media="screen">
-<link href="http://fios.verizon.com/css/style.css" rel="stylesheet" media="screen">
-<link href="http://fios.verizon.com/landing_pages/4001/css/experience.css" rel="stylesheet" media="screen">
-<link href="http://fios.verizon.com/css/jquery.fancybox.css" rel="stylesheet" media="screen">
+        <link href="http://fios.verizon.com/css/style.css" rel="stylesheet" media="screen">
+        <link href="http://fios.verizon.com/landing_pages/4001/css/experience.css" rel="stylesheet" media="screen">
+        <link href="http://fios.verizon.com/css/jquery.fancybox.css" rel="stylesheet" media="screen">
 
 	</head>
 	<body class="landing">
@@ -121,9 +121,9 @@
 </div>
 
 			<!-- Banner -->
-				<section class="hero hero-order-now" style="height:500px; ">
-					<div class="row" style="height:500px; ">
-		<div class="grid-16" style="height:500px; background-image:url(common/img/order-now-devices.jpg); background-position:right">
+				<section class="hero hero-order-now" style="height:450px; ">
+					<div class="row" style="height:450px; ">
+		<div class="grid-16" style="height:450px; background-image:url(common/img/order-now-devices.jpg); background-position:right">
 
 			<h1>Order Verizon FiOS</h1>
 			<h3>Great service, Incredible Value. Order FiOS Today.</h3>
@@ -135,14 +135,10 @@
 			</div>
 			<!-- END .call-now-bar -->
 			
-            <div class="grid-9" style="height:500px;">
+            <div class="grid-9" style="height:450px;">
                 <div class="cta-footer-form">
                    
-                    <form name="contact_form" runat="server" >
-
-                        <input type="hidden" name="action" value="Y1Ttj7N4NG%2Ft2SmSTwUUOw%3D%3D">
-                        <input type="hidden" name="ref" value="CVuWClJIpEw%2BUAFlcHe0EQ%3D%3D">
-                        <input type="hidden" name="PageID" value="page9571">
+                    <form name="contact_form" runat="server" >                        
 
                         <input type="text" id="txtPhone" runat="server" name="Phone1" class="Phone1" value="" placeholder="Phone Number" required="">
                         <input type="text" id="txtEmail" runat="server" name="Phone1" class="Phone1" value="" placeholder="Email" required="">
@@ -150,16 +146,24 @@
                        
                         <asp:LinkButton ID="lnkOrder" runat="server" CssClass="grad-primary btn btn-highlight"  OnClick="lnkOrder_Click" Text="Sign up"></asp:LinkButton>
                      
+                        <h3><br /><asp:Label ID="lblmessage" runat="server" Text=""></asp:Label></h3>
                      </form>
+                    
                 </div>
+
+                	
                 <!-- END .cta-footer-form -->
             </div>
+            
+				
 		<!-- END .grid-16 -->
 	</div>
+
         </div>
 				</section>
-
 			
+      
+				
 
 			
 

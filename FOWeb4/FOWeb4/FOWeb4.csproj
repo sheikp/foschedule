@@ -74,6 +74,22 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="common\css\font-awesome.min.css" />
+    <Content Include="common\css\ie8.css" />
+    <Content Include="common\css\images\overlay.png" />
+    <Content Include="common\css\main.css" />
+    <Content Include="common\fonts\fontawesome-webfont.svg" />
+    <Content Include="common\img\order-now-devices.jpg" />
+    <Content Include="common\js\ie\backgroundsize.min.htc" />
+    <Content Include="common\js\ie\html5shiv.js" />
+    <Content Include="common\js\ie\PIE.htc" />
+    <Content Include="common\js\ie\respond.min.js" />
+    <Content Include="common\js\jquery.dropotron.min.js" />
+    <Content Include="common\js\jquery.min.js" />
+    <Content Include="common\js\jquery.scrollgress.min.js" />
+    <Content Include="common\js\main.js" />
+    <Content Include="common\js\skel.min.js" />
+    <Content Include="common\js\util.js" />
     <Content Include="Default.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
@@ -98,6 +114,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="common\fonts\fontawesome-webfont.eot" />
+    <Content Include="common\fonts\fontawesome-webfont.ttf" />
+    <Content Include="common\fonts\fontawesome-webfont.woff" />
+    <Content Include="common\fonts\fontawesome-webfont.woff2" />
+    <Content Include="common\fonts\FontAwesome.otf" />
+    <Content Include="common\sass\ie8.scss" />
+    <Content Include="common\sass\libs\_functions.scss" />
+    <Content Include="common\sass\libs\_mixins.scss" />
+    <Content Include="common\sass\libs\_skel.scss" />
+    <Content Include="common\sass\libs\_vars.scss" />
+    <Content Include="common\sass\main.scss" />
+    <None Include="Properties\PublishProfiles\ifcloud.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -105,6 +133,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
