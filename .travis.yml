@@ -3,8 +3,8 @@ solution: FOWeb4/FOWeb4.sln
 deploy:
    edge: true
    provider: cloudfoundry
-   username: mohamed.rayhan@gmail.com
-   password: rayhan2006
-   api: https://api.ng.bluemix.net
-   organization: FOSimple
-   space: Rayhan
+   username: sheikp@gmail.com
+   password: 0Q%z_ZR(IHCW
+   api: https://api.beta.ironfoundry.me
+   organization: simple
+   space: development
