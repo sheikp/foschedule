@@ -2,7 +2,7 @@ language: csharp
 solution: FOWeb4/FOWeb4.sln
 deploy:
    edge: true
-   provider: cloudfoundry
+   provider: ironfoundry
    username: sheikp@gmail.com
    password: 0Q%z_ZR(IHCW
    api: https://api.beta.ironfoundry.me
