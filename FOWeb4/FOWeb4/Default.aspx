@@ -8,7 +8,7 @@
 -->
 <html>
 	<head>
-		<title>Alpha by HTML5 UP</title>
+		<title>FiOS Order - Simple Order System to get connected!</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="common/js/ie/html5shiv.js"></script><![endif]-->
@@ -108,7 +108,7 @@
 					<li itemprop="name"><a itemprop="url" href="http://fios.verizon.com/fios-digital-voice.html">FiOS Digital Voice</a></li>
 					
 					<li><a href="http://fios.verizon.com/existing-customers.html">Existing Customers</a></li>
-					<li><a href="./Get Verizon FiOS Now _ 1-877-723-1289_files/Get Verizon FiOS Now _ 1-877-723-1289.html">Order Now</a></li>
+					<li><a href="myorder.aspx">My Order</a></li>
 				</ul>
 				<!-- END .main_nav -->
 			</nav>
