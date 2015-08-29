@@ -5,5 +5,5 @@ env:
     - "FTP_USER=sheikp"
     - "FTP_PASSWORD=rayhan2006"
 after_success:
-    "curl  -T FOWeb4/FOWeb4/Default.aspx -u $FTP_USER:$FTP_PASSWORD ftp://waws-prod-sn1-011.ftp.azurewebsites.windows.net/site/wwwroot"
-    "curl  -T Default.aspx -u $FTP_USER:$FTP_PASSWORD ftp://waws-prod-sn1-011.ftp.azurewebsites.windows.net/site/wwwroot"
+    "curl -T FOWeb4/FOWeb4/Default.aspx -u $FTP_USER:$FTP_PASSWORD ftp://waws-prod-sn1-011.ftp.azurewebsites.windows.net/site/wwwroot"
+    
