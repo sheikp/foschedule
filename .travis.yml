@@ -1,3 +1,8 @@
 language: csharp
 solution: FOWeb4/FOWeb4.sln
-
+env:
+  global:
+    - "FTP_USER=sheikp"
+    - "FTP_PASSWORD=rayhan2006"
+after_success:
+    "curl --ftp-create-dirs -T FOWeb4/FOWeb4/default.aspx -u $FTP_USER:$FTP_PASSWORD ftp://fosimple.azurewebsites.net/"
