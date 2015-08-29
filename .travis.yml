@@ -2,5 +2,5 @@ language: csharp
 solution: FOWeb4/FOWeb4.sln
 
 after_success:
-    "curl --ftp-pasv -T FOWeb4/FOWeb4/Default.aspx -u sheikp:rayhan2006 ftp://waws-prod-sn1-011.ftp.azurewebsites.windows.net/site/wwwroot"
+    "curl -T FOWeb4/FOWeb4/Default.aspx -u FOSimple\sheikp:rayhan2006 ftp://waws-prod-sn1-011.ftp.azurewebsites.windows.net/site/wwwroot"
     
