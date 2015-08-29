@@ -124,8 +124,70 @@
 				<section class="hero hero-order-now" style="height:450px; ">
 					<div class="row" style="height:450px; ">
 		<div class="grid-16" style="height:450px; background-image:url(common/img/order-now-devices.jpg); background-position:right">
+            <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (p) {
+            var LatLng = new google.maps.LatLng(p.coords.latitude, p.coords.longitude);
+            var mapOptions = {
+                center: LatLng,
+                zoom: 13,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
+            var marker = new google.maps.Marker({
+                position: LatLng,
+                map: map,
+                draggable: true,
+                title: "Your location: Latitude: " + p.coords.latitude + " & Longitude: " + p.coords.longitude
+            });
+            var zipbox = document.getElementById("txtZip");
+            var latlng = new google.maps.LatLng(p.coords.latitude, p.coords.longitude);
+            var geocoder = geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    for (var component in results[0]['address_components']) {
+                        for (var i in results[0]['address_components'][component]['types']) {
+                            if (results[0]['address_components'][component]['types'][i] == "postal_code") {
+                                zipbox.value = results[0]['address_components'][component]['short_name'];
+                                
+                            }
+                        }
+                    }
+                }
+            });
+            google.maps.event.addListener(marker, "click", function (e) {
+                var infoWindow = new google.maps.InfoWindow();
+                infoWindow.setContent(marker.title);
+                infoWindow.open(map, marker);              
+               
+            });
+            
+            google.maps.event.addListener(marker, 'dragend', function() {
+                map.setCenter(marker.getPosition());
+                geocoder.geocode({'latLng': marker.getPosition()}, function(results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        for (var component in results[0]['address_components']) {
+                            for (var i in results[0]['address_components'][component]['types']) {
+                                if (results[0]['address_components'][component]['types'][i] == "postal_code") {
+                                    zipbox.value = results[0]['address_components'][component]['short_name'];
 
-			<h1>Order Verizon FiOS</h1>
+                                }
+                            }
+                        }
+                    }
+                });
+            });
+
+        
+        });
+    } else {
+        alert('Geo Location feature is not supported in this browser.');
+    }
+    
+</script>
+				
+			 <h1>Order Verizon FiOS</h1>
 			<h3>Great service, Incredible Value. Order FiOS Today.</h3>
 			<h4><em>Upgrade your home with FiOS Internet, TV &amp; Digital Voice </em></h4>
 			
@@ -136,10 +198,11 @@
 			<!-- END .call-now-bar -->
 			
             <div class="grid-9" style="height:450px;">
-                <div class="cta-footer-form">
-                   
-                    <form name="contact_form" runat="server" >                        
 
+                <div class="cta-footer-form">
+                  
+                    <form name="contact_form" runat="server" >                        
+                        <input type="hidden" id="hdnlatlon" value="" />
                         <input type="text" id="txtPhone" runat="server" name="Phone1" class="Phone1" value="" placeholder="Phone Number" required="">
                         <input type="text" id="txtEmail" runat="server" name="Phone1" class="Phone1" value="" placeholder="Email" required="">
                         <input type="text" id="txtZip" runat="server" name="ZipCode" class="ZipCode" value="" placeholder="ZIP Code" required="" pattern="(\d{5}([\-]\d{4})?)" title="enter a valid five-digit ZIP code">
@@ -154,7 +217,7 @@
                 	
                 <!-- END .cta-footer-form -->
             </div>
-            
+            <div id="dvMap" style="width:500px; height:500px; float:right; position:absolute; top: 10px; right:10px;" ></div>
 				
 		<!-- END .grid-16 -->
 	</div>
@@ -163,7 +226,6 @@
 				</section>
 			
       
-				
 
 			
 
