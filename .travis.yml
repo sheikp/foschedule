@@ -1,10 +1,12 @@
-language: csharp
-solution: FOWeb4/FOWeb4.sln
+language: node_js
+node_js:
+- 0.10
+before_script:
+  - "npm install -g se-interpreter"
+script:
+  - "se-interpreter interpreter_config.json"
 
 env:
   global:
-    - secure: fuI9fGWNZJV0ou0n4wIiScEpS5kbrm3XNRjmpuiLKO4XigRfgvHa3O0RiJGi767QHP3kSSUU7/z6siJm21FLOVBv8yovKeHaOngKPSDgEx52z655hE7YndaP7qYw1fWnglPys31FPZaFFNVgJIrMZxVUOJEbhgm3DwXh0Cvd98RDaI3vLs2v08NPBB/jDTjiA0Mblc5zNVQlz7J5rqqf2wv960C1zpk00gUSxAWbV7jrbQG2Fs+qupJ4HzbsoslDLIo8OCEls6F4D4MdxDsi5PZ30J1v2Ft2DYfF3+n8LtXenW5jYBFLwfjOUsHgNTyrQXPRg45NVy2sTMzdSzIgw4VhL20ck77YdSCA0V3W3AV7D2kRrjPZxNrdHcCtX9rA071jSovnn5g83kMbLInPj0U1zxdy1CyVVsSS3+W3jxjJHQaJSHHYE9+kAMnadn3yLVQtCAkiaJmH8CEeP9Oc1Qb8JvIQkdZEmBwWiHqRXrKOGvXeGJ2VeVASgYTmqTV8V+2TnV2piOwCBWd7nhZka+X9M5berGP6c8OWpTZ13sJdIiebYGI33Hb/auLbZYgmFDOfkgMprVx+iaP5lOoVFxOhps/5iYcTcHy3OvmSsF2c5XWfXj3H2GENJHQDZz4wekPG3G3VShuUsMrpSgQatJ9chNqPv+FAPIlvWMVQOto=
-    - secure: mti2gUrAo0VjmvJtceYL+jPqej8x2iycFnfPpQ1dYS8BolTchW50rIicL7eV8QhjQL9Zv4PSyDxZeajOSuF91sq05ZXKvci8Z7yUOAYk7vhlpzimtxIs34u3yGtbg
-    
-addons:
-  sauce_connect: true
+    - SAUCE_USERNAME=jackchem2003
+    - SAUCE_ACCESS_KEY=3d4fa22d-12ad-4f18-9168-37ea7d88b522
