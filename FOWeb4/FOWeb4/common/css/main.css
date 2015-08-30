@@ -2178,6 +2178,10 @@
 		opacity: 1.0;
 	}
 
+    .popupbg {
+		background: #000;
+		opacity: .50;
+	}
 /* Box */
 
 	.box {

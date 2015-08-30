@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="FOWeb4.Default" %>
-
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <!DOCTYPE HTML>
 <!--
 	Alpha by HTML5 UP
@@ -7,7 +7,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
+	<head runat="server">
 		<title>FiOS Order - Simple Order System to get connected!</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -184,6 +184,19 @@
     } else {
         alert('Geo Location feature is not supported in this browser.');
     }
+
+    function validate()
+    {
+        var ph = document.getElementById("txtPhone");
+        var ml = document.getElementById("txtEmail");
+        var zp = document.getElementById("txtZip");
+        if(ph.value == "" || ml.value == "" || zp.value == "")
+        {
+            alert("Please enter all the information to procees!");
+            return false;
+        }      
+
+    }
     
 </script>
 				
@@ -203,13 +216,31 @@
                   
                     <form name="contact_form" runat="server" >                        
                         <input type="hidden" id="hdnlatlon" value="" />
-                        <input type="text" id="txtPhone" runat="server" name="Phone1" class="Phone1" value="" placeholder="Phone Number" required="">
-                        <input type="text" id="txtEmail" runat="server" name="Phone1" class="Phone1" value="" placeholder="Email" required="">
-                        <input type="text" id="txtZip" runat="server" name="ZipCode" class="ZipCode" value="" placeholder="ZIP Code" required="" pattern="(\d{5}([\-]\d{4})?)" title="enter a valid five-digit ZIP code">
-                       
+                        <input type="text" id="txtPhone" runat="server" name="Phone1" class="Phone1" value="" placeholder="Phone Number"  >
+                        <input type="text" id="txtEmail" runat="server" name="Phone1" class="Phone1" value="" placeholder="Email"  >
+                        <input type="text" id="txtZip" runat="server" name="ZipCode" class="ZipCode" value="" placeholder="ZIP Code"   pattern="(\d{5}([\-]\d{4})?)" title="enter a valid five-digit ZIP code">
+                        <input type="hidden" id="popupctrl" runat="server" />
                         <asp:LinkButton ID="lnkOrder" runat="server" CssClass="grad-primary btn btn-highlight"  OnClick="lnkOrder_Click" Text="Sign up"></asp:LinkButton>
-                     
-                        <h3><br /><asp:Label ID="lblmessage" runat="server" Text=""></asp:Label></h3>
+                      <asp:scriptmanager id="ScriptManager1" runat="server">
+</asp:scriptmanager>
+                        <cc1:modalpopupextender id="ModalPopupExtender1" runat="server" 
+	okcontrolid="btnOkay" 
+	popupcontrolid="Panel1" 
+    TargetControlID="popupctrl"	
+	backgroundcssclass="popupbg">
+</cc1:modalpopupextender>
+                        
+	        <div id="Panel1" class="box" style="width:500px; " runat="server">
+                
+                <div >
+                    <span style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:2em;color:tomato"><asp:Label ID="lblmessage" runat="server" Text=""></asp:Label></span>
+                </div>
+                <div style="text-align:center">
+                   <br /> <input id="btnOkay" type="button" value="Done" style="align-content:center"/>
+                    
+		</div>
+        </div>
+
                      </form>
                     
                 </div>
@@ -225,7 +256,13 @@
         </div>
 				</section>
 			
-      
+     
+            
+
+
+
+
+
 
 			
 
