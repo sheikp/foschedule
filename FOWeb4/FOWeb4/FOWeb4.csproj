@@ -91,6 +91,7 @@
     <Content Include="common\js\skel.min.js" />
     <Content Include="common\js\util.js" />
     <Content Include="Default.aspx" />
+    <Content Include="loaderio-218e8e156db48b6db37ae12e769cf1d1.txt" />
     <Content Include="loaderio-61abbaebb694d5469ecabc0d31a7b94e.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
