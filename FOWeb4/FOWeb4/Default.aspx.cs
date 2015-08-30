@@ -33,7 +33,7 @@ namespace FOWeb4
                 if(cuS[0] == "")
                     lblmessage.Text = "Sorry we are not covering your location. :(";
                 else
-            lblmessage.Text = "Thank you for Ordering FiOS. Technician " + cuS[0] + "(Mobile: " + cuS[2] + ") will come to your place on " + cuS[4] + " @ " + cuS[6] + ".";
+            lblmessage.Text = "Thank you for Ordering FiOS - Order# " + cuS[8] + ". Technician " + cuS[0] + "(Mobile: " + cuS[2] + ") will come to your place on " + cuS[4] + " @ " + cuS[6] + ".";
             }
             ModalPopupExtender1.Show();
             

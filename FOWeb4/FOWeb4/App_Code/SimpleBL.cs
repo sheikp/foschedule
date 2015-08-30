@@ -60,7 +60,12 @@ namespace FOWeb4
                 }
                 else
                 {
-                    if (slot == "1")
+                    if(Convert.ToDateTime(sdate) < DateTime.Now)
+                    {
+                        sdate = DateTime.Now.AddDays(1).Year.ToString() + "-" + DateTime.Now.AddDays(1).Month.ToString() + "-" + DateTime.Now.AddDays(1).Day.ToString();
+                        slot = "1";
+                    }
+                    else if (slot == "1")
                     {
                         slot = "2";
                         sdate = Convert.ToDateTime(sdate).Year.ToString() + "-" + Convert.ToDateTime(sdate).Month.ToString() + "-" + Convert.ToDateTime(sdate).Day.ToString();
@@ -80,7 +85,7 @@ namespace FOWeb4
             
 
             con.Close();
-            return techname + "##" + ph + "##" + sdate + "##" + slot;
+            return techname + "##" + ph + "##" + sdate + "##" + slot + "##" + oid.ToString();
         }
 
         public string GetSchedule(string phone, string ordernum)
@@ -99,7 +104,15 @@ namespace FOWeb4
                 slot = dr[3].ToString();
                // tid = Convert.ToInt16(dr[4].ToString());
             }
-           
+            if(sdate != "")
+            {
+                if (Convert.ToDateTime(sdate) < DateTime.Now)
+                {
+                    techname = "Completed";
+                }
+                sdate = Convert.ToDateTime(sdate).Month.ToString() + "/" + Convert.ToDateTime(sdate).Day.ToString() + "/" + Convert.ToDateTime(sdate).Year.ToString();            
+            
+            }
             dr.Dispose();           
 
             con.Close();
