@@ -10,13 +10,13 @@
     {
       "type": "clickElement",
       "locator": {
-        "type": "css selector",
-        "value": "section.hero.hero-order-now > div.row > div.grid-16"
+        "type": "id",
+        "value": "lnkOrder"
       }
     },
     {
       "type": "verifyTextPresent",
-      "text": "Map"
+      "text": "Please enter all the information to procees!"
     }
   ],
   "data": {
