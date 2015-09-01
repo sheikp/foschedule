@@ -5,39 +5,49 @@
   "steps": [
     {
       "type": "get",
-      "url": "http://foweb.azurewebsites.net/"
+      "url": "http://fosimple.azurewebsites.net/"
     },
     {
-      "type": "verifyElementValue",
+      "type": "clickElement",
+      "locator": {
+        "type": "css selector",
+        "value": "section.hero.hero-order-now"
+      }
+    },
+    {
+      "type": "setElementText",
       "locator": {
         "type": "id",
         "value": "txtPhone"
       },
-      "value": ""
+      "text": "9876543211"
     },
     {
-      "type": "verifyElementValue",
+      "type": "setElementText",
       "locator": {
         "type": "id",
         "value": "txtEmail"
       },
-      "value": ""
+      "text": "xyz@verizon.com"
     },
     {
-      "type": "verifyElementValue",
+      "type": "setElementText",
       "locator": {
         "type": "id",
         "value": "txtZip"
       },
-      "value": ""
+      "text": "750388"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "id",
+        "value": "lnkOrder"
+      }
     },
     {
       "type": "verifyTextPresent",
-      "text": "Sign up"
-    },
-    {
-      "type": "verifyTextPresent",
-      "text": "Order Verizon FiOS"
+      "text": "Sorry we are not covering your location. :("
     }
   ],
   "data": {
