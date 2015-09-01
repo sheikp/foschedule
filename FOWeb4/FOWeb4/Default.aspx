@@ -200,7 +200,7 @@
     
 </script>
 				
-			 <h1>Order Verizon FiOS-test CI demo</h1>
+			 <h1>Order Verizon FiOSo</h1>
 			<h3>Great service, Incredible Value. Order FiOS Today.</h3>
 			<h4><em>Upgrade your home with FiOS Internet, TV &amp; Digital Voice </em></h4>
 			
