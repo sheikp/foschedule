@@ -8,7 +8,7 @@
 -->
 <html>
 	<head runat="server">
-		<title>FiOS Order - Simple Order System to get connected!</title>
+		<title>FiOS Order - Simple Order System to get connected!  </title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="common/js/ie/html5shiv.js"></script><![endif]-->
