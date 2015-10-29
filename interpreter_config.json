@@ -16,7 +16,7 @@
         }
       ],
       "scripts": [
-        "Selenium/*"
+        "Selenium/*", "JIRA_Defect/*"
       ]
     }
   ]
