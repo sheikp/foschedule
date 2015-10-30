@@ -24,16 +24,16 @@ namespace FOWeb4
             { 
             SimpleBL nOrder = new SimpleBL();
             int res = nOrder.newOrder(txtPhone.Value, txtEmail.Value, txtZip.Value);
-            string[] cuS = nOrder.ScheduleOrder(res, txtZip.Value).Split("##".ToCharArray());
+            string[] cuS = nOrder.ScheduleOrder(res, txtZip.Value,"install").Split("##".ToCharArray());
 
             if (cuS[6] == "1")
                 cuS[6] = "9AM";
             else
                 cuS[6] = "1PM";
-                if(cuS[0] == "")
+                if(cuS[0] == "")                    
                     lblmessage.Text = "Sorry we are not covering your location. :(";
                 else
-            lblmessage.Text = "Thank you for Ordering FiOS - Order# " + cuS[8] + ". Technician " + cuS[0] + "(Mobile: " + cuS[2] + ") will come to your place on " + cuS[4] + " @ " + cuS[6] + ".";
+                    lblmessage.Text = "Thank you for Ordering FiOS. <br>Your Order#: " + cuS[8] + ". <br>Technician: " + cuS[0] + ".<br>Mobile: " + cuS[2] + ".<br>Scheduled Dated: " + cuS[4] + ". <br>Scheduled Time: " + cuS[6] + ".";
             }
             ModalPopupExtender1.Show();
             

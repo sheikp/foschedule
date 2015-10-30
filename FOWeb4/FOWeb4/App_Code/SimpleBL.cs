@@ -14,8 +14,8 @@ namespace FOWeb4
         protected MySqlConnection con;
         public SimpleBL()
         {
-            //con = new MySqlConnection("server=localhost;User Id=root;password=verizon123;database=fosimple");
-            con = new MySqlConnection("server=us-cdbr-azure-southcentral-e.cloudapp.net;User Id=bdb7a3c8e6d0b7;password=231d60d0;database=fosimple");
+            con = new MySqlConnection("server=localhost;User Id=root;password=rayhan2006;database=justdispatch");
+            //con = new MySqlConnection("server=us-cdbr-azure-southcentral-e.cloudapp.net;User Id=vzhack;password=rayhan2006;database=justdispatch");
         }
 
         public int newOrder(string custph, string custemail, string custzip)
@@ -37,10 +37,29 @@ namespace FOWeb4
             return x;
         }
 
-        public string ScheduleOrder(int oid, string custzip)
+        public int newRepair(int custid, string descr)
         {
             con.Open();
-            MySqlCommand cmd = new MySqlCommand("select TechnicianName, Phone, sdate,slotnumber,idtechnician  from fosimple.coverage c join fosimple.technician t on c.officezip = t.officezip left join fosimple.schedule s on s.technician_id = t.idTechnician where coveragezip = '" + custzip + "' and s.idschedule in (select max(idschedule) from fosimple.schedule group by technician_id)  order by s.sdate, s.slotnumber", con);
+            MySqlCommand cmd = new MySqlCommand("insert into repair(customerid,repairdetail) values(" + custid + ",'" + descr + "')", con);
+            int x = cmd.ExecuteNonQuery();
+
+            cmd = new MySqlCommand("select max(idrepair) from repair", con);
+            MySqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.Read())
+            {
+                x = Convert.ToInt16(dr[0].ToString());
+            }
+            dr.Dispose();
+
+            con.Close();
+            return x;
+        }
+
+        public string ScheduleOrder(int oid, string custzip,string type)
+        {
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand("select TechnicianName, Phone, sdate,slotnumber,idtechnician  from coverage c join technician t on c.officezip = t.officezip and skillset like '%" + type + "%' left join schedule s on s.technician_id = t.idTechnician where coveragezip = '" + custzip + "' and (s.idschedule in (select max(idschedule) from schedule group by technician_id) or s.sdate is null)  order by s.sdate, s.slotnumber,idTechnician", con);
             MySqlDataReader dr = cmd.ExecuteReader();
 
             string techname = "", ph = "", sdate = "", slot = "";
@@ -78,7 +97,7 @@ namespace FOWeb4
                 }
                 dr.Dispose();
 
-                cmd = new MySqlCommand("insert into schedule(Order_id, technician_id,ynconfirmed,sdate,slotnumber) values(" + oid.ToString() + "," + tid.ToString() + ",'N','" + sdate + "','" + slot + "')", con);
+                cmd = new MySqlCommand("insert into schedule(Order_repair_id, technician_id,ynconfirmed,sdate,slotnumber,stype,yncompleted) values(" + oid.ToString() + "," + tid.ToString() + ",'N','" + sdate + "','" + slot + "','" + type + "','N')", con);
                 int x = cmd.ExecuteNonQuery();
             }
            
@@ -91,7 +110,7 @@ namespace FOWeb4
         public string GetSchedule(string phone, string ordernum)
         {
             con.Open();
-            MySqlCommand cmd = new MySqlCommand("select TechnicianName, Phone, sdate,slotnumber,idtechnician,order_id  from fosimple.technician t  join fosimple.schedule s on s.technician_id = t.idTechnician join fosimple.orders o on o.idorders =s.order_id where idorders = " + ordernum + " and mobilenumber = '" + phone + "'", con);
+            MySqlCommand cmd = new MySqlCommand("select TechnicianName, Phone, sdate,slotnumber,idtechnician,order_id  from technician t  join schedule s on s.technician_id = t.idTechnician join orders o on o.idorders =s.order_id where idorders = " + ordernum + " and mobilenumber = '" + phone + "'", con);
             MySqlDataReader dr = cmd.ExecuteReader();
 
             string techname = "", ph = "", sdate = "", slot = "";
