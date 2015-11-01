@@ -23,18 +23,22 @@ namespace FOWeb4
         protected void lnkOrder_Click(object sender, EventArgs e)
         {
             if (txtPhone.Value == "" || txtEmail.Value == "" || txtZip.Value == "")
+            {
                 lblmessage.Text = "Please enter all the information to procees!";
+                btnLater.Visible = false;
+                btnOkay.Visible = false;
+            }
             else
-            { 
-            SimpleBL nOrder = new SimpleBL();
-            int res = nOrder.newOrder(txtPhone.Value, txtEmail.Value, txtZip.Value);
+            {
+                SimpleBL nOrder = new SimpleBL();
+                int res = nOrder.newOrder(txtPhone.Value, txtEmail.Value, txtZip.Value);
                 Session.Add("orderid", res.ToString());
-            string[] cuS = nOrder.ScheduleOrder(res, txtZip.Value,"install").Split("##".ToCharArray());
+                string[] cuS = nOrder.ScheduleOrder(res, txtZip.Value, "install").Split("##".ToCharArray());
 
-            if (cuS[6] == "1")
-                cuS[6] = "9AM";
-            else
-                cuS[6] = "1PM";
+                if (cuS[6] == "1")
+                    cuS[6] = "9AM";
+                else
+                    cuS[6] = "1PM";
                 if (cuS[0] == "")
                 {
                     lblmessage.Text = "Sorry we are not covering your location. :(";
