@@ -59,7 +59,7 @@ namespace FOWeb4
         public string getzipcustomer(int repid)
         {
             con.Open();
-            MySqlCommand cmd =  new MySqlCommand("select zipcode from customers c join repair r on c.idcusomers = r.customerid where r.idrepair =" + repid.ToString(), con);
+            MySqlCommand cmd =  new MySqlCommand("select zipcode from customers c join repair r on c.idcustomers = r.customerid where r.idrepair =" + repid.ToString(), con);
             MySqlDataReader dr = cmd.ExecuteReader();
             string szipcode = "";
             if (dr.Read())
