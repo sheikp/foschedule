@@ -97,6 +97,7 @@
     <Content Include="Default.aspx" />
     <Content Include="loaderio-218e8e156db48b6db37ae12e769cf1d1.txt" />
     <Content Include="loaderio-61abbaebb694d5469ecabc0d31a7b94e.txt" />
+    <Content Include="TestResult.aspx" />
     <Content Include="Repair.aspx" />
     <Content Include="MyOrder.aspx" />
     <Content Include="Web.config" />
@@ -109,6 +110,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestResult.aspx.cs">
+      <DependentUpon>TestResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestResult.aspx.designer.cs">
+      <DependentUpon>TestResult.aspx</DependentUpon>
     </Compile>
     <Compile Include="Repair.aspx.cs">
       <DependentUpon>Repair.aspx</DependentUpon>

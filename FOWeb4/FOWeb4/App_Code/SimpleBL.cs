@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
-
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace FOWeb4
 {
@@ -202,6 +202,19 @@ namespace FOWeb4
 
             con.Close();
             return techname + "##" + ph + "##" + sdate + "##" + slot;
+        }
+
+        public DataTable getResult()
+        {
+            DataTable dt= new DataTable();
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand("select * from automation_results order by 1 desc", con);
+            cmd.ExecuteNonQuery();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            da.Fill(dt);           
+
+            con.Close();
+            return dt;
         }
         
     }
