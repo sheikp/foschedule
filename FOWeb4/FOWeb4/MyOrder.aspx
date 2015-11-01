@@ -25,45 +25,8 @@
 	<body class="landing">
 		<div id="page-wrapper">
 
-			<!-- Header -->
-           <div class="masthead-upper">
-		<div class="row">
-			<div class="grid-16">
-
-				<a href="http://fios.verizon.com/" class="logo-verizon-fios">Verizon FiOS Authorized Retailer</a>
-
-				
-
-	<div class="grad-primary banner-perfect-package is-closed">
-
-		<div class="is-closed">
-			<div class="col1 chevron">
-				<span>Order Now</span>
-			</div>
-
-			<div class="col3">
-				<strong style="color:white">Find your perfect package</strong>
-				SWITCH TO FiOS!
-			</div> <!-- END .col3 -->
-		</div>
-	</div>
-	<!-- END .urgency-banner -->
-
-
-				<div class="masthead-cta">
-					<span class="h-phone">1-877-696-3455</span>
-					<span class="promo-wrap">
-						Use Promo Code: <span class="h-promo">Q81-642</span>
-					</span>
-				</div>
-				<!-- END .masthead-cta -->
-
-			</div>
-			<!-- END .grid-16 -->
-		</div>
-		<!-- END .row -->
-	</div>
-				
+			
+          
 
             <div class="primary-nav-wrapper">
 	<div class="row group">
@@ -71,45 +34,9 @@
 		
 			<nav class="primary-nav" role="navigation">
 				<ul itemscope="itemscope" itemtype="http://www.schema.org/SiteNavigationElement">
-					<li><a href="http://fios.verizon.com/">Home</a></li>
-					<li><span itemprop="name">
-						<a itemprop="url" href="http://fios.verizon.com/fios-plans.html">Plans &amp; Pricing</a></span>
-						<ul class="sub-nav">
-							<li><a href="http://fios.verizon.com/fios-bundles.html">FiOS Bundles</a></li>
-							<li><a href="http://fios.verizon.com/fios-triple-plays.html">FiOS Triple Play</a></li>
-							<li><a href="http://fios.verizon.com/fios-double-plays.html">FiOS Double Play</a></li>
-						</ul>
-					</li>
-					<li><span itemprop="name">
-						<a itemprop="url" href="http://fios.verizon.com/why-fios.html">Why FiOS?</a></span>
-						<ul class="sub-nav">
-							<li><a href="http://fios.verizon.com/fios-coverage.html">FiOS Availability</a></li>
-							<li><a href="http://fios.verizon.com/compare.html">FiOS Vs. Cable</a></li>
-							<li><a href="http://fios.verizon.com/fios-cable.html">FiOS Cable</a></li>
-							<li><a href="http://fios.verizon.com/fios-reviews.html">FiOS Reviews</a></li>
-						</ul>
-					</li>
-					<li><span itemprop="name"><a itemprop="url" href="http://fios.verizon.com/fios-internet.html">FiOS Internet</a></span>
-						<ul class="sub-nav">
-							<li><a href="http://fios.verizon.com/fios-quantum.html">FiOS Quantum <sup>SM</sup></a></li>
-							<li><a href="http://fios.verizon.com/fios-speeds.html">FiOS Speeds</a></li>
-						</ul>
-					</li>
-					
-					<li><span itemprop="name">
-						<a itemprop="url" href="http://fios.verizon.com/fios-tv.html">FiOS TV</a></span>
-						<ul class="sub-nav">
-							<li><a href="http://fios.verizon.com/fios-on-demand.html">On Demand</a></li>
-							<li><a href="http://fios.verizon.com/tv-channels.html">TV Channels</a></li>
-							<li><a href="http://fios.verizon.com/fios-tv-equipment.html">FiOS Equipment</a></li>
-							<li><a href="http://fios.verizon.com/quantum-tv.html">FiOS Quantum<sup>SM</sup> TV</a></li>
-							<li><a href="http://fios.verizon.com/upgrade-to-quantum-tv.html">Upgrade to Quantum<sup>SM</sup> TV</a></li>
-						</ul>
-					</li>
-					<li itemprop="name"><a itemprop="url" href="http://fios.verizon.com/fios-digital-voice.html">FiOS Digital Voice</a></li>
-					
-					<li><a href="http://fios.verizon.com/existing-customers.html">Existing Customers</a></li>
-					<li><a href="myorder.aspx">My Order</a></li>
+					<li><a href="default.aspx">Order</a></li>
+                    <li><a href="repair.aspx">Repair Ticket</a></li>	
+					<li><a href="myorder.aspx">Status</a></li>					
 				</ul>
 				<!-- END .main_nav -->
 			</nav>
@@ -121,77 +48,80 @@
 	<!-- END .row -->
 </div>
 
-			<section class="content-deck order-now">
-	<div class="row">
+			<section class="content-deck order-now"><center>
+	<div class="row" style="width:700px;">
 		
-		<div class="grid-11">
-								
-			
-			<!-- END .grid-5 -->
 		
-			<div class="grid-9 nest">
-				<div class="content-txt">
-					<h2>Order Verizon FiOS</h2>
-					<p>Verizon FiOS<sup>®</sup> offers some of the fastest speeds in the nation – with speeds of up to 500 Mbps in some areas.1 Using cutting-edge fiber-optic technology, Verizon delivers blazing fast FiOS<sup>®</sup> Internet to your home.</p>
-					<p>Connect all your devices and enjoy your FiOS connection throughout the house.</p>
-					<p>Bundle FiOS and save. Multiply your savings with a FiOS Double or Triple play. Get FiOS and see what Verizon can do for you.</p>
-				</div>
-				<!-- END .content-txt -->
-			</div>
-			<!-- END .grid-6 -->
-			
-		</div>
-		<!-- END .grid-11 -->
 		
-		<div class="grid-5">
+		
+		<div class="grid-7">
 			
 			<div class="request-call">			
-				<h3>Order Status</h3>
+				<h3>Order/Repair Ticket Status</h3>
 				<p>Fill out the following form to know your technician appointment.</p>
 				<form name="contact_form" runat="server"> 
-	
-	<input type="text" id="Order" name="OrderNumber" class="FirstName" value="" placeholder="Order Number" required="" runat="server">	
+	<asp:RadioButton GroupName="type" id="rinstall" runat="server" style="font-size:large;color:white" Text="Install" /><asp:RadioButton style="font-size:large;color:white" GroupName="type" runat="server" id="rrepair"  Text="Repair" />
+	<input type="text" id="Order" name="OrderNumber" class="FirstName" value="" placeholder="Order/Repair Ticket Number" required="" runat="server">	
+
 	<input type="text" id="Phone" name="Phone1" class="Phone1" value="" placeholder="Phone Number" required="" runat="server">
 	<asp:Button ID="btnStatus" Text="Check Status"  runat="server" OnClick="btnStatus_Click"/>
 	  <input type="hidden" id="popupctrl" runat="server" />
                          <asp:scriptmanager id="ScriptManager1" runat="server">
 </asp:scriptmanager>
                         <cc1:modalpopupextender id="ModalPopupExtender1" runat="server" 
-	okcontrolid="btnOkay" 
+	okcontrolid="closeimg" 
 	popupcontrolid="Panel1" 
     TargetControlID="popupctrl"	
 	backgroundcssclass="popupbg">
 </cc1:modalpopupextender>
+             
+                         <cc1:modalpopupextender id="ModalPopupExtender2" runat="server" 
+	okcontrolid="closeimg2" 
+	popupcontrolid="Panel2" 
+    TargetControlID="popupctrl"	
+	backgroundcssclass="popupbg">
+</cc1:modalpopupextender>
                         
-	        <div id="Panel1" class="box" style="width:500px; " runat="server">
-                
+	        <div id="Panel1" class="box" style="width:500px;" runat="server" >
+               <div style="text-align:right" > <img src="common/img/close.png" width="30" id="closeimg" style="cursor:pointer; " /></div>
                 <div >
-                    <span style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:2em;color:tomato"><asp:Label ID="lblmessage" runat="server" Text=""></asp:Label></span>
+                    <span style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:1.5em; color:gray"><asp:Label ID="lblmessage" runat="server" Text=""></asp:Label></span>
                 </div>
                 <div style="text-align:center">
-                   <br /> <input id="btnOkay" type="button" value="Done" style="align-content:center"/>
+                   <br /> <asp:Button id="btnOkay" runat="server" OnClick="btnOkay_Click" Text="Okay" style="align-content:center"/> <asp:Button id="btnLater" Text="Later" runat="server" OnClick="btnLater_Click" style="align-content:center"/>
                     
 		</div>
         </div>
+
+                        <div id="Panel2" class="box" style="width:500px; color:gray" runat="server">
+               <div style="text-align:right"> <img src="common/img/close.png" width="30" id="closeimg2" style="cursor:pointer; " /></div>
+                <div >
+                    <span style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:1.5em;">
+                        <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+                    </span>
+                </div>
+               <div style="text-align:center">
+                   <br /> <asp:Button id="btnOkay2" runat="server" OnClick="btnOkay2_Click" Text="Confirm" style="align-content:center"/>
+                    
+		            </div>
+                </div>           
+	        
 </form>
 			</div>
 			<!-- END .request-call -->
 			
 		</div>
+
+       
 		<!-- END .grid-5 -->
 		
 	</div>
 	<!-- END .row -->
-</section>
+                </center>
+			</section>
 			
      
             
-
-
-
-
-
-
 			
 
 			<!-- Footer -->

@@ -32,9 +32,10 @@
 		
 			<nav class="primary-nav" role="navigation">
 				<ul itemscope="itemscope" itemtype="http://www.schema.org/SiteNavigationElement">
-					<li><a href="default.aspx">Home</a></li>
-					<li><a href="myorder.aspx">My Order</a></li>
-					<li><a href="myorder.aspx">Issue Ticket</a></li>					
+					<li><a href="default.aspx">Order</a></li>
+                    <li><a href="repair.aspx">Repair Ticket</a></li>	
+					<li><a href="myorder.aspx">Status</a></li>
+									
 				</ul>
 				<!-- END .main_nav -->
 			</nav>
@@ -126,9 +127,9 @@
     
 </script>
 				
-			 <h1>Order Verizon FiOS</h1>
-			<h3>Great service, Incredible Value. Order FiOS Today.</h3>
-			<h4><em>Upgrade your home with FiOS Internet, TV &amp; Digital Voice </em></h4>
+			 <h1>Just in time dispatch</h1>
+			<h3>Uber like dispatch just in one click</h3>
+			
 			
             <!--<div class="grad-secondary call-now-bar">
 				<strong>Order NOW!</strong>
@@ -144,28 +145,48 @@
                         <input type="hidden" id="hdnlatlon" value="" />
                         <input type="text" id="txtPhone" runat="server" name="Phone1" class="Phone1" value="" placeholder="Phone Number"  >
                         <input type="text" id="txtEmail" runat="server" name="Phone1" class="Phone1" value="" placeholder="Email"  >
-                        <input type="text" id="txtZip" runat="server" name="ZipCode" class="ZipCode" value="" placeholder="ZIP Code"   pattern="(\d{5}([\-]\d{4})?)" title="enter a valid five-digit ZIP code">
-                        <input type="hidden" id="popupctrl" runat="server" />
-                        <asp:LinkButton ID="lnkOrder" runat="server" CssClass="grad-primary btn btn-highlight"  OnClick="lnkOrder_Click" Text="Sign up"></asp:LinkButton>
+                        <input type="text" id="txtZip" runat="server" name="ZipCode" class="ZipCode" value="" placeholder="ZIP Code" >
+                        <input type="hidden" id="popupctrl" runat="server" value="0" />
+                        <asp:LinkButton ID="lnkOrder" runat="server" CssClass="grad-primary btn btn-highlight"  OnClick="lnkOrder_Click" Text="Order"></asp:LinkButton>
                       <asp:scriptmanager id="ScriptManager1" runat="server">
 </asp:scriptmanager>
                         <cc1:modalpopupextender id="ModalPopupExtender1" runat="server" 
-	okcontrolid="btnOkay" 
+	okcontrolid="closeimg" 
 	popupcontrolid="Panel1" 
     TargetControlID="popupctrl"	
 	backgroundcssclass="popupbg">
 </cc1:modalpopupextender>
+
+                         <cc1:modalpopupextender id="ModalPopupExtender2" runat="server" 
+	okcontrolid="closeimg2" 
+	popupcontrolid="Panel2" 
+    TargetControlID="popupctrl"	
+	backgroundcssclass="popupbg">
+</cc1:modalpopupextender>
                         
-	        <div id="Panel1" class="box" style="width:500px; " runat="server">
-                
+	        <div id="Panel1" class="box" style="width:500px;" runat="server" >
+               <div style="text-align:right" > <img src="common/img/close.png" width="30" id="closeimg" style="cursor:pointer; " /></div>
                 <div >
                     <span style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:1.5em;"><asp:Label ID="lblmessage" runat="server" Text=""></asp:Label></span>
                 </div>
                 <div style="text-align:center">
-                   <br /> <input id="btnOkay" type="button" value="Confirm" style="align-content:center"/> <input id="btnLater" type="button" value="Later" style="align-content:center"/>
+                   <br /> <asp:Button id="btnOkay" runat="server" OnClick="btnOkay_Click" Text="Confirm" style="align-content:center"/> <asp:Button id="btnLater" Text="Later" runat="server" OnClick="btnLater_Click" style="align-content:center"/>
                     
 		</div>
         </div>
+
+                        <div id="Panel2" class="box" style="width:500px; " runat="server">
+               <div style="text-align:right"> <img src="common/img/close.png" width="30" id="closeimg2" style="cursor:pointer; " /></div>
+                <div >
+                    <span style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:1.5em;">
+                        <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+                    </span>
+                </div>
+                <div style="text-align:center">
+                   <br /> <asp:Button id="btnOkay2" runat="server" OnClick="btnOkay2_Click" Text="Confirm" style="align-content:center"/>
+                    
+		            </div>
+                </div>
 
                      </form>
                     

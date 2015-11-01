@@ -31,5 +31,32 @@ namespace FOWeb4
             
             ModalPopupExtender1.Show();
         }
+
+        protected void btnLater_Click(object sender, EventArgs e)
+        {
+            ModalPopupExtender1.Hide();
+            ModalPopupExtender2.Show();
+            popupctrl.Value = "2";
+
+        }
+
+        protected void btnOkay_Click(object sender, EventArgs e)
+        {
+          //  SimpleBL nOrder = new SimpleBL();
+          //  nOrder.confirmOrder(Convert.ToInt32(Session["orderid"].ToString()), "install");
+            ModalPopupExtender1.Hide();
+        }
+
+        protected void btnOkay2_Click(object sender, EventArgs e)
+        {
+            string stype = "";
+            if (rinstall.Checked)
+                stype = "install";
+            else
+                stype = "repair";
+            SimpleBL nOrder = new SimpleBL();
+            nOrder.confirmOrderLater(Convert.ToInt32(Session["orderid"].ToString()), stype, Calendar1.SelectedDate);
+            ModalPopupExtender2.Hide();
+        }
     }
 }

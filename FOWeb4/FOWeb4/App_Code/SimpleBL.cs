@@ -56,6 +56,36 @@ namespace FOWeb4
             return x;
         }
 
+        public string getzipcustomer(int custid)
+        {
+            con.Open();
+            MySqlCommand cmd =  new MySqlCommand("select zipcode from customers where idcustomers =" + custid.ToString(), con);
+            MySqlDataReader dr = cmd.ExecuteReader();
+            string szipcode = "";
+            if (dr.Read())
+            {
+                szipcode = dr[0].ToString();
+            }
+            dr.Dispose();
+
+            con.Close();
+            return szipcode;
+        }
+
+        public void confirmOrder(int oid, string type)
+        {
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand("update schedule set ynconfirmed = 'Y' where order_repair_id = " + oid.ToString() + " and stype = '" + type + "'", con);
+            cmd.ExecuteNonQuery();
+        }
+
+        public void confirmOrderLater(int oid, string type, DateTime sdate)
+        {
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand("update schedule set ynconfirmed = 'Y', sdate='" + sdate.Year.ToString() + "-" + sdate.Month.ToString() + "-" + sdate.Day.ToString() + " 00:00:00',slotnumber=1 where order_repair_id = " + oid.ToString() + " and stype = '" + type + "'", con);
+            cmd.ExecuteNonQuery();
+        }
+
         public string ScheduleOrder(int oid, string custzip,string type)
         {
             con.Open();
@@ -72,29 +102,65 @@ namespace FOWeb4
                 slot = dr[3].ToString();
                 tid = Convert.ToInt16(dr[4].ToString());
 
-                if (sdate == "")
+                if(type=="install")
                 {
-                    sdate = DateTime.Now.AddDays(1).Year.ToString() + "-" + DateTime.Now.AddDays(1).Month.ToString() + "-" + DateTime.Now.AddDays(1).Day.ToString();
-                    slot = "1";
-                }
-                else
-                {
-                    if(Convert.ToDateTime(sdate) < DateTime.Now)
+                    if (sdate == "")
                     {
                         sdate = DateTime.Now.AddDays(1).Year.ToString() + "-" + DateTime.Now.AddDays(1).Month.ToString() + "-" + DateTime.Now.AddDays(1).Day.ToString();
                         slot = "1";
                     }
-                    else if (slot == "1")
+                    else
                     {
-                        slot = "2";
-                        sdate = Convert.ToDateTime(sdate).Year.ToString() + "-" + Convert.ToDateTime(sdate).Month.ToString() + "-" + Convert.ToDateTime(sdate).Day.ToString();
+                        if (Convert.ToDateTime(sdate) < DateTime.Now)
+                        {
+                            sdate = DateTime.Now.AddDays(1).Year.ToString() + "-" + DateTime.Now.AddDays(1).Month.ToString() + "-" + DateTime.Now.AddDays(1).Day.ToString();
+                            slot = "1";
+                        }
+                        else if (slot == "1")
+                        {
+                            slot = "2";
+                            sdate = Convert.ToDateTime(sdate).Year.ToString() + "-" + Convert.ToDateTime(sdate).Month.ToString() + "-" + Convert.ToDateTime(sdate).Day.ToString();
+                        }
+                        else
+                        {
+                            slot = "1";
+                            sdate = Convert.ToDateTime(sdate).AddDays(1).Year.ToString() + "-" + Convert.ToDateTime(sdate).AddDays(1).Month.ToString() + "-" + Convert.ToDateTime(sdate).AddDays(1).Day.ToString();
+                        }
+                    }
+                }
+                else
+                {
+                    if (sdate == "")
+                    {
+                        sdate = DateTime.Now.AddDays(1).Year.ToString() + "-" + DateTime.Now.AddDays(1).Month.ToString() + "-" + DateTime.Now.AddDays(1).Day.ToString();
+                        slot = "1";
                     }
                     else
                     {
-                        slot = "1";
-                        sdate = Convert.ToDateTime(sdate).AddDays(1).Year.ToString() + "-" + Convert.ToDateTime(sdate).AddDays(1).Month.ToString() + "-" + Convert.ToDateTime(sdate).AddDays(1).Day.ToString();
+                        if (Convert.ToDateTime(sdate) < DateTime.Now)
+                        {
+                            sdate = DateTime.Now.AddDays(1).Year.ToString() + "-" + DateTime.Now.AddDays(1).Month.ToString() + "-" + DateTime.Now.AddDays(1).Day.ToString();
+                            slot = "1";
+                        }
+                        else if (slot == "1")
+                        {
+                            slot = "2";
+                            sdate = Convert.ToDateTime(sdate).Year.ToString() + "-" + Convert.ToDateTime(sdate).Month.ToString() + "-" + Convert.ToDateTime(sdate).Day.ToString();
+                        }
+                        else if (slot == "2")
+                        {
+                            slot = "3";
+                            sdate = Convert.ToDateTime(sdate).Year.ToString() + "-" + Convert.ToDateTime(sdate).Month.ToString() + "-" + Convert.ToDateTime(sdate).Day.ToString();
+                        }
+                        else 
+                        {
+                            slot = "1";
+                            sdate = Convert.ToDateTime(sdate).AddDays(1).Year.ToString() + "-" + Convert.ToDateTime(sdate).AddDays(1).Month.ToString() + "-" + Convert.ToDateTime(sdate).AddDays(1).Day.ToString();
+                        }
                     }
                 }
+
+                
                 dr.Dispose();
 
                 cmd = new MySqlCommand("insert into schedule(Order_repair_id, technician_id,ynconfirmed,sdate,slotnumber,stype,yncompleted) values(" + oid.ToString() + "," + tid.ToString() + ",'N','" + sdate + "','" + slot + "','" + type + "','N')", con);
@@ -110,7 +176,7 @@ namespace FOWeb4
         public string GetSchedule(string phone, string ordernum)
         {
             con.Open();
-            MySqlCommand cmd = new MySqlCommand("select TechnicianName, Phone, sdate,slotnumber,idtechnician,order_id  from technician t  join schedule s on s.technician_id = t.idTechnician join orders o on o.idorders =s.order_id where idorders = " + ordernum + " and mobilenumber = '" + phone + "'", con);
+            MySqlCommand cmd = new MySqlCommand("select TechnicianName, Phone, sdate,slotnumber,idtechnician,order_repair_id  from technician t  join schedule s on s.technician_id = t.idTechnician join orders o on o.idorders =s.order_repair_id where idorders = " + ordernum + " and mobilenumber = '" + phone + "'", con);
             MySqlDataReader dr = cmd.ExecuteReader();
 
             string techname = "", ph = "", sdate = "", slot = "";
