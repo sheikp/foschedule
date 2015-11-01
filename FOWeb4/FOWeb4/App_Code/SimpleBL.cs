@@ -14,8 +14,8 @@ namespace FOWeb4
         protected MySqlConnection con;
         public SimpleBL()
         {
-            con = new MySqlConnection("server=localhost;User Id=root;password=rayhan2006;database=justdispatch");
-            //con = new MySqlConnection("server=us-cdbr-azure-southcentral-e.cloudapp.net;User Id=vzhack;password=rayhan2006;database=justdispatch");
+            //con = new MySqlConnection("server=localhost;User Id=root;password=rayhan2006;database=justdispatch");
+            con = new MySqlConnection("server=us-cdbr-azure-central-a.cloudapp.net;User Id=bdedbb1076214d;password=9a4667ff;database=cleardbdispatch");
         }
 
         public int newOrder(string custph, string custemail, string custzip)
