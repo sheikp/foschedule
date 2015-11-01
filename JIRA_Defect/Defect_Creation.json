@@ -121,7 +121,7 @@
         "type": "id",
         "value": "summary"
       },
-      "text": "Test an Application"
+      "text": "HACk APP:Error response status: 7, , NoSuchElement - An element could not be located on the page using the given search"
     },
     {
       "type": "clickElement",
