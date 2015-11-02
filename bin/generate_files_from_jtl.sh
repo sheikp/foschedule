@@ -14,3 +14,4 @@ $png results/$1_response-times-percentiles.png --plugin-type ResponseTimesPercen
 $png results/$1_throughput-vs-threads.png --plugin-type ThroughputVsThreads
 $png results/$1_response-codes-per-second.png --plugin-type ResponseCodesPerSecond
 $png results/$1_transactions-per-second.png --plugin-type TransactionsPerSecond
+
