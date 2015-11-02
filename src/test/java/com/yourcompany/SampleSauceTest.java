@@ -8,15 +8,6 @@ import com.saucelabs.common.SauceOnDemandAuthentication;
 import com.saucelabs.common.SauceOnDemandSessionIdProvider; 
 import com.saucelabs.testng.SauceOnDemandAuthenticationProvider; 
 import com.saucelabs.testng.SauceOnDemandTestListener; 
-
-
-
-
-
-
-
-
-
 import org.openqa.selenium.By; 
 import org.openqa.selenium.Keys; 
 import org.openqa.selenium.WebDriver; 
