@@ -151,8 +151,8 @@ public SauceOnDemandAuthentication authentication = new SauceOnDemandAuthenticat
          driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);  
       	 driver.findElement(By.xpath("/html/body/div/div/div[2]/div[1]/div/div[1]/button")).click(); 
        	//driver.findElement(By.cssSelector("button.signed-out")).click(); 
-          driver.findElement(By.id("login_field")).sendKeys("jackchem2003"); 
-          driver.findElement(By.id("password")).sendKeys("Geetha143"); 
+          driver.findElement(By.id("login_field")).sendKeys("sheikp@gmail.com"); 
+          driver.findElement(By.id("password")).sendKeys("rayhan2006"); 
           driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/form/div[3]/input[4]")).click(); 
           boolean travis_succ=driver.findElement(By.cssSelector(".ember-view")).isDisplayed(); 
           if (driver.findElement(By.cssSelector(".ember-view")).getText()=="CI_Jmeter") 
@@ -172,8 +172,8 @@ public SauceOnDemandAuthentication authentication = new SauceOnDemandAuthenticat
           			driver.get("https://travis-ci.org/"); 
           	    	driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS); 
           	    	driver.findElement(By.xpath("/html/body/div/div/div[2]/div[1]/div/div[1]/button")).click(); 
-             	        driver.findElement(By.id("login_field")).sendKeys("jackchem2003"); 
-          	        driver.findElement(By.id("password")).sendKeys("Geetha143"); 
+             	        driver.findElement(By.id("login_field")).sendKeys("sheikp"); 
+          	        driver.findElement(By.id("password")).sendKeys("rayhan2006"); 
           	        driver.findElement(By.xpath("/html/body/div[4]/div[1]/div/form/div[3]/input[4]")).click(); 
            		} 
           		Selenium_Func(Testcases[i], driver); 
